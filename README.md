@@ -8,8 +8,11 @@ Mutante Detector
 Este proyecto implementa un servicio que permite detectar si un humano es mutante basándose en su secuencia de ADN. Fue desarrollado en Java utilizando el framework Spring Boot y cumple con los requisitos de un examen de MercadoLibre.
 
 Niveles Implementados: 
+
 Nivel 1: Implementación de la función isMutant en una arquitectura con capas de Controlador, Servicio y Repositorio.
+
 Nivel 2: Creación de una API REST desplegada en Render.
+
 Nivel 3: Integración de una base de datos H2 para almacenar registros de ADN y exponer estadísticas de las verificaciones.
 
 **Requisitos**
