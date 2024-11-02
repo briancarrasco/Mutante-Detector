@@ -30,56 +30,96 @@ PostMan
 
    
 **Endpoints de la API**
+
 Abrimos la aplicacion **POSTMAN** y realizaremos lo siguiente
+
 1. Verificación de Mutante
 Detecta si el ADN enviado pertenece a un mutante.
 
 URL: http://localhost:8080/mutant/
+
 Método HTTP: POST
+
 Cuerpo de la solicitud (JSON)
+
 {
   "dna": ["ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG"]
 }
+
 Respuestas:
 200 OK: El ADN pertenece a un mutante.
 403 Forbidden: El ADN no pertenece a un mutante.
 
 2. Estadísticas de Verificación
-Devuelve las estadísticas de ADN verificados.
+Devuelve un JSON con la cantidad de mutantes y humanos verificados.
 
 URL: http://localhost:8080/stats
+
 Método HTTP: GET
+
 Respuesta (JSON):
+
 {
   "count_mutant_dna": 40,
   "count_human_dna": 100,
   "ratio": 0.4
 }
+
+**Ejemplos de ADN**
+
+Ejemplo de matriz **MUTANTE**
+{
+    "dna": ["ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG"]
+}
+Ejemplo de matriz **NO MUTANTE**
+{
+    "dna": ["ATGATA", "GTCTTA", "AATTGG", "ACTAGT", "GGATTC", "AGGCAA"]
+}
 **Pruebas**
 Pruebas Unitarias
 Las pruebas unitarias están incluidas en el proyecto y pueden ejecutarse con:
+
 mvn test
 
 **Pruebas de Carga con JMeter**
+
 Para garantizar que la API pueda soportar tráfico de 100 a 1 millón de peticiones por segundo, se realizaron pruebas de carga con Apache JMeter. El archivo de configuración de pruebas (mutante_detector.jmx) está disponible en el repositorio.
+
 Ejecucion:
-Configuración de HTTP Request en JMeter
+
+Configuración de HTTP Request en **JMeter**
+
 Agrega un HTTP Request Sampler
 
 Haz clic derecho en Thread Group > Add > Sampler > HTTP Request.
+
 Completa los Campos como Sigue:
 
 Server Name or IP: localhost
+
 Port Number: 8080
+
 Protocol: http (sin el s)
+
 Path: /mutant/ (asegúrate de incluir la barra final)
+
 Method: POST
+
 Haz clic en la pestaña Body Data (en lugar de Parameters).
+
 En Body Data, pega el siguiente JSON:
+
 {
   "dna": ["ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG"]
 }
+
 Agrega un View Results Tree.
+
 Guarda la configuración.
+
 Ejecuta la prueba haciendo clic en el botón de Play (el triángulo verde en la barra de herramientas).
+
 Ve a View Results Tree y deberías ver la solicitud y respuesta como se mostró en Postman.
+
+Y este seria el resultado final de mi proyecto para el parcial de desarrollo de software, desde ya muchas gracias y un cordial saludo.
+
