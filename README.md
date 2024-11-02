@@ -36,7 +36,7 @@ PostMan
 
 Abrimos la aplicacion **POSTMAN** y realizaremos lo siguiente
 
-1. Verificación de Mutante
+1. **Verificación de Mutante**
 Detecta si el ADN enviado pertenece a un mutante.
 
 URL: http://localhost:8080/mutant/
@@ -55,7 +55,8 @@ Respuestas:
 
 403 Forbidden: El ADN no pertenece a un mutante.
 
-2. Estadísticas de Verificación
+2. **Estadísticas de Verificación**
+3. 
 Devuelve un JSON con la cantidad de mutantes y humanos verificados.
 
 URL: http://localhost:8080/stats
@@ -73,13 +74,17 @@ Respuesta (JSON):
 **Ejemplos de ADN**
 
 Ejemplo de matriz **MUTANTE**
+
 {
     "dna": ["ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG"]
 }
+
 Ejemplo de matriz **NO MUTANTE**
+
 {
     "dna": ["ATGATA", "GTCTTA", "AATTGG", "ACTAGT", "GGATTC", "AGGCAA"]
 }
+
 **Pruebas**
 Pruebas Unitarias
 Las pruebas unitarias están incluidas en el proyecto y pueden ejecutarse con:
