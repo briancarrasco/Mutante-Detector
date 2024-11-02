@@ -47,7 +47,9 @@ Cuerpo de la solicitud (JSON)
 }
 
 Respuestas:
+
 200 OK: El ADN pertenece a un mutante.
+
 403 Forbidden: El ADN no pertenece a un mutante.
 
 2. Estadísticas de Verificación
