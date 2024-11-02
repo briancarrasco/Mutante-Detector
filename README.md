@@ -1,3 +1,7 @@
+PRIMER PARCIAL DESARROLLO DE SOFTWARE
+Alumno: Brian Carrasco
+Comision: 3k09
+
 Mutante Detector
 Este proyecto implementa un servicio que permite detectar si un humano es mutante basándose en su secuencia de ADN. Fue desarrollado en Java utilizando el framework Spring Boot y cumple con los requisitos de un examen de MercadoLibre.
 Niveles Implementados: 
