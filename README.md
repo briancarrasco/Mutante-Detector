@@ -1,19 +1,20 @@
 Mutante Detector
 Este proyecto implementa un servicio que permite detectar si un humano es mutante basándose en su secuencia de ADN. Fue desarrollado en Java utilizando el framework Spring Boot y cumple con los requisitos de un examen de MercadoLibre.
-Niveles Implementados
+Niveles Implementados: 
 Nivel 1: Implementación de la función isMutant en una arquitectura con capas de Controlador, Servicio y Repositorio.
 Nivel 2: Creación de una API REST desplegada en Render.
 Nivel 3: Integración de una base de datos H2 para almacenar registros de ADN y exponer estadísticas de las verificaciones.
-Requisitos
+**Requisitos**
 Para ejecutar este proyecto se necesita:
 
 Java: versión 17 o superior
 Maven: para gestionar dependencias y construir el proyecto
 Spring Boot: para el desarrollo del servicio API
 H2 Database: base de datos en memoria
-JMeter: para pruebas de carga (opcional)
+JMeter: para pruebas de carga 
+PostMan
 
-Ejecución Local
+**Ejecución Local**
 1. Clonar el repositorio
 2. Configurar la Base de Datos
 3. Construir el proyecto
@@ -36,7 +37,7 @@ Respuestas:
 403 Forbidden: El ADN no pertenece a un mutante.
 
 2. Estadísticas de Verificación
-Devuelve las estadísticas de ADN verificado.
+Devuelve las estadísticas de ADN verificados.
 
 URL: http://localhost:8080/stats
 Método HTTP: GET
@@ -51,7 +52,7 @@ Pruebas Unitarias
 Las pruebas unitarias están incluidas en el proyecto y pueden ejecutarse con:
 mvn test
 
-Pruebas de Carga con JMeter
+**Pruebas de Carga con JMeter**
 Para garantizar que la API pueda soportar tráfico de 100 a 1 millón de peticiones por segundo, se realizaron pruebas de carga con Apache JMeter. El archivo de configuración de pruebas (mutante_detector.jmx) está disponible en el repositorio.
 Ejecucion:
 Configuración de HTTP Request en JMeter
@@ -70,6 +71,7 @@ En Body Data, pega el siguiente JSON:
 {
   "dna": ["ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG"]
 }
+Agrega un View Results Tree.
 Guarda la configuración.
 Ejecuta la prueba haciendo clic en el botón de Play (el triángulo verde en la barra de herramientas).
 Ve a View Results Tree y deberías ver la solicitud y respuesta como se mostró en Postman.
